@@ -5,16 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-<div ng-app="myApp.cart" ng-controller="cartCtrl"  data-ng-init="init()" ></div>
-<p>hi aka</p>
+<div ng-app="myApp.cart" ng-controller="cartCtrl"  ></div>
+<button ng-click="showAllItems()">Show all items </button>
 
 
 
+<!-- x mean item-->
 
-    <div ng-repeat="x in itemss">{{x}}</div>
-        <p>hhasdf</p>>
+    <div ng-repeat="x in order.items" >{{x.name}}
+        <button ng-click="removeItem($index)">remove</button>
+    </div>
 
 
+
+<button ng-click="addItem()">Add</button>
+<button ng-click="updateCart()">Update</button>
 
 
 
