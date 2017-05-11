@@ -87,8 +87,6 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
         {
             var res = $http.put('http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
             res.success(function(data, status, headers, config) {
-                //           alert( "Success message: " +status + JSON.stringify({data: data}));
-                //$scope.order.items.splice(0,0,$scope.dataObj);
                 $scope.showAllItems();
 
             });
@@ -116,7 +114,6 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
             var res = $http.put('http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
             res.success(function(data, status, headers, config) {
-               // alert('Order Placed');
                 $window.location.href = '';
 
             });
