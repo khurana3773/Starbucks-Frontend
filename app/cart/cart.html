@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
@@ -32,8 +32,8 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Quantity</th>
                     <th class="text-center">Milk</th>
                     <th class="text-center">Size</th>
                     <th> </th>
@@ -41,46 +41,52 @@
                 </thead>
                 <tbody>
                 <tr data-ng-repeat="x in order.items">
-                    <td class="col-sm-8 col-md-6">
-                        <div class="media">
+                    <td class="col-sm-8 col-md-1">
+                    <!--    <div class="media">
                             <div class="media-body">
-                                <h4 class="media-heading">{{x.name}}</h4>
+                                <h4 class="media-heading">
+-->
+                                    <select class="form-control" ng-model="x.name" ng-options="y for y in products" style="width:150px">
+                                    </select>
+
+
+
                             </div>
                         </div></td>
-                    <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="{{x.qty}}">
+                    <td class="col-sm-1 col-md-1" style="...">
+                        <input type="text" class="form-control" id="exampleInputEmail1" ng-model="x.qty"></input>
                     </td>
-                    <td class="col-sm-1 col-md-1 text-center"><strong>{{x.milk}}</strong></td>
-                    <td class="col-sm-1 col-md-1 text-center"><strong>{{x.size}}</strong></td>
+                    <td class="col-sm-1 col-md-1 text-center">
+                        <select ng-model="x.milk" class="form-control" ng-options="z for z in milkType"></select>
+                    </td>
+                    <td class="col-sm-1 col-md-1 text-center">
+                        <select ng-model="x.size" class="form-control" ng-options="z for z in size"></select>
+                    </td>
                     <td class="col-sm-1 col-md-1">
                         <button ng-click="removeItem($index)" type="button" class="btn btn-danger">
                             <span class="glyphicon glyphicon-remove"></span>
                         </button></td>
                 </tr>
                 <tr>
-                    <td>   </td>
+                    <td>  <button class="btn btn-primary" ng-click="addItem()"> Add Item <span class="glyphicon glyphicon-plus"></span></button> </td>
                     <td>   </td>
                     <td>   </td>
                     <td>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                        <button type="button" class="btn btn-default" ng-click="updateCart()">
+                            <span class="glyphicon glyphicon-button"></span> Update
                         </button></td>
                     <td>
-                        <button type="button" class="btn btn-success">
-                            Payment <span class="glyphicon glyphicon-play"></span>
+                        <button type="button" class="btn btn-success" ng-click="confirmOrder()">
+                            Confirm <span class="glyphicon glyphicon-play"></span>
                         </button></td>
+
+
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<a href="" ng-click="showAllItems()">
-    <span class="glyphicon glyphicon-refresh"></span> Refresh
-</a>
-<button ng-click="showAllItems()">Show all items </button>
-<button ng-click="addItem()">Add</button>
-<button ng-click="updateCart()">Update</button>
 
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

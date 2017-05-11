@@ -5,6 +5,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
 
 
+
     cart.config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/cart', {
             templateUrl: 'cart/cart.html',
@@ -12,11 +13,15 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
         });
     }])
 
-    cart.controller('cartCtrl', ['$scope','$http',function($scope,$http) {
-
+    cart.controller('cartCtrl', ['$scope','$http','$window','sharedProperties',function($scope,$http,$window,sharedProperties) {
+        $scope.products = ["Latte","Chai","Boba","Coffee","Hot Chocolate"];
+        $scope.milkType = ["Whole","Half n Half","Skim","None"];
+        $scope.size = ["Small","Regular","Large","Extra Large"];
        // $scope.$apply($scope.itemss );
         $scope.init = function () {
            $scope.showAllItems();
+           //alert(sharedProperties.getProperty());
+           //alert()
         }
 
 
@@ -24,29 +29,30 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
             $http({
                 method: 'GET',
-                url: 'http://localhost:9090/v3/starbucks/cart'
+                url: 'http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart'
             }).then(function successCallback(response) {
    //             alert("cart received");
 
 
                 $scope.order = response.data;
             }, function errorCallback(response) {
-                alert("Fail");
+                alert("Fail"+sharedProperties.getProperty());
             });
         }
 
 
-        $scope.dataObj = {
-                    "qty": 10,
-                    "name": "latte",
-                    "milk": "whole",
-                    "size": "large"
+        $scope.dataObj =
+            {
+                    "qty": "1",
+                    "name": "",
+                    "milk": "",
+                    "size": ""
         };
 
         $scope.removeItem = function(index)
         {
             $scope.order.items.splice(index,1);
-            var res = $http.post('http://localhost:9090/v3/starbucks/cart', $scope.order);
+            var res = $http.post('http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
             res.success(function(data, status, headers, config) {
      //           alert( "Success message: " +status + JSON.stringify({data: data}));
             });
@@ -60,10 +66,9 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
             var tempOrder = $scope.order;
 
-
             $scope.order.items.push($scope.dataObj);
 
-            var res = $http.post('http://localhost:9090/v3/starbucks/cart', $scope.order);
+            var res = $http.post('http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
             res.success(function(data, status, headers, config) {
      //           alert( "Success message: " +status + JSON.stringify({data: data}));
                 //$scope.order.items.splice(0,0,$scope.dataObj);
@@ -74,25 +79,45 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
                 alert( "failed to add: " + JSON.stringify({data: data}));
             });
 
+        }
 
 
+
+        $scope.updateCart = function()
+        {
+            var res = $http.put('http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
+            res.success(function(data, status, headers, config) {
+                //           alert( "Success message: " +status + JSON.stringify({data: data}));
+                //$scope.order.items.splice(0,0,$scope.dataObj);
+                $scope.showAllItems();
+
+            });
+            res.error(function(data, status, headers, config) {
+                alert( "failed to add: " + JSON.stringify({data: data}));
+            });
         }
 
 
 
 
-        $scope.pay = function()
+
+
+
+
+
+        $scope.confirmOrder = function()
         {
 
-            var tempOrder = $scope.order;
+            $scope.order.status = 'PLACED';
 
 
 
 
-            var res = $http.post('http://localhost:9090/v3/starbucks/cart', $scope.order.id);
+
+            var res = $http.put('http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
             res.success(function(data, status, headers, config) {
-                //           alert( "Success message: " +status + JSON.stringify({data: data}));
-                //$scope.order.items.splice(0,0,$scope.dataObj);
+               // alert('Order Placed');
+                $window.location.href = '';
 
             });
             res.error(function(data, status, headers, config) {

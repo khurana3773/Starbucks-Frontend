@@ -9,6 +9,23 @@ angular.module('myApp.home', ['ngRoute'])
   });
 }])
 
-.controller('homeCtrl', [function() {
 
-}]);
+.service('sharedProperties', function () {
+    var store = 'First';
+    return {
+        getProperty: function () {
+            return store;
+        },
+        setProperty: function(value) {
+            store = value;
+        }
+    };
+})
+    .controller('homeCtrl', ['$scope','sharedProperties',function($scope,sharedProperties) {
+
+        $scope.setStore = function (value) {
+            sharedProperties.setProperty(value);
+            alert(value);
+        }
+
+    }]);
