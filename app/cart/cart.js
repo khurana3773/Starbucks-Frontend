@@ -15,6 +15,11 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
     cart.controller('cartCtrl', ['$scope','$http',function($scope,$http) {
 
        // $scope.$apply($scope.itemss );
+        $scope.init = function () {
+           $scope.showAllItems();
+        }
+
+
         $scope.showAllItems =     function () {
 
             $http({
@@ -32,15 +37,10 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
 
         $scope.dataObj = {
-
-
-
-                    "qty": 1,
+                    "qty": 10,
                     "name": "latte",
                     "milk": "whole",
                     "size": "large"
-
-
         };
 
         $scope.removeItem = function(index)
@@ -67,6 +67,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
             res.success(function(data, status, headers, config) {
      //           alert( "Success message: " +status + JSON.stringify({data: data}));
                 //$scope.order.items.splice(0,0,$scope.dataObj);
+                $scope.showAllItems();
 
             });
             res.error(function(data, status, headers, config) {

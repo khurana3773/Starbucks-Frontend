@@ -3,8 +3,8 @@
 // Declare app level module which depends on views, and components
 var starbucksApp = angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
+  'myApp.store1',
+  'myApp.home',
   'myApp.cart',
   'myApp.version'
 ]);
@@ -15,11 +15,11 @@ starbucksApp.config(['$locationProvider', '$routeProvider', function($locationPr
   $routeProvider
 
       .when('/', {
-        templateUrl : 'view1/view1.html',
-          controller : 'View1Ctrl'
+        templateUrl : 'Home/home.html',
+          controller : 'homeCtrl'
 
       }) ;
 
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/home'});
 }]);
