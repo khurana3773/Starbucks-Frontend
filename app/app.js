@@ -21,7 +21,7 @@ starbucksApp.config(['$locationProvider', '$routeProvider', function($locationPr
   $routeProvider
 
       .when('/', {
-        templateUrl : 'Home/home.html',
+        templateUrl : 'home/home.html',
           controller : 'homeCtrl'
 
       }) ;
