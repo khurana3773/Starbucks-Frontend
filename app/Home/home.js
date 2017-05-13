@@ -11,13 +11,20 @@ angular.module('myApp.home', ['ngRoute'])
 
 
 .service('sharedProperties', function () {
-    var store = 'First';
+    var store = '';
+    var order = '';
     return {
         getProperty: function () {
             return store;
         },
         setProperty: function(value) {
             store = value;
+        },
+        getOrderProperty: function () {
+            return order;
+        },
+        setOrderProperty: function(orderIn) {
+            order = orderIn;
         }
     };
 })
@@ -26,6 +33,6 @@ angular.module('myApp.home', ['ngRoute'])
         $scope.setStore = function (value) {
             sharedProperties.setProperty(value);
             alert(value);
-        }
+        };
 
     }]);

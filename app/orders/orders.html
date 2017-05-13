@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <!--<link rel="icon" href="./favicon.ico"/> -->
+    <link rel="icon" href="../../favicon.ico"/>
 
     <title>Starbucks</title>
 
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <!-- Custom styles for this template -->
 </head>
 
 <body>
@@ -30,6 +31,7 @@
                     width="50px"/></a>
         </div>
         <div id="navbar">
+
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/cart">My Bag</a></li>
                 <li><a href = "/orders">Orders</a></li>
@@ -38,38 +40,52 @@
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
 </nav>
-<!-- Static navbar -->
-<div class = "container">
-    <div class = "row">
+<div ng-app="myApp.orders" ng-controller="ordersCtrl" data-ng-init="init()" >
+    <!-- Static navbar -->
 
-    <div class="col-xs-4">
-        <img src="https://www.civil-coffee.com/wp-content/uploads/2017/02/coffee.jpg" width="300px"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th class="text-center">Order Id</th>
+                        <th class="text-center">Item Count</th>
+                        <th class="text-center">Status</th>
+                        <th> </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="x in order">
+                        <td class="col-sm-8 col-md-1">
+                            <!--    <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">-->
 
+                            <a href="/order" ng-click="setOrder(x.id) ">{{x.id}}</a>
 
+        </td>
+        <td class="col-sm-1 col-md-1" style="...">
 
+        </td>
+        <td class="col-sm-1 col-md-1 text-center">
+        {{x.status}}
+        </td>
+        <td class="col-sm-1 col-md-1 text-center">
+
+        </td>
+
+        </tr>
+        </tbody>
+        </table>
     </div>
-    <div class="col-xs-4">
-        <img src="https://www.civil-coffee.com/wp-content/uploads/2017/02/coffee.jpg" width="300px"/>
+</div>
+</div>
 
 
-
-    </div>
-    <div class="col-xs-4">
-        <img src="https://www.civil-coffee.com/wp-content/uploads/2017/02/coffee.jpg" width="300px"/>
-
-
-    </div>
-    </div>
-    <!-- Bootstrap core JavaScript
-================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </div>
 </body>
 </html>
-<!-- Latest compiled and minified JavaScript -->
-
-

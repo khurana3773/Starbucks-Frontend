@@ -20,7 +20,7 @@ angular.module('myApp.store1', ['ngRoute'])
 
       $http({
           method: 'GET',
-          url: 'http://localhost:9090/v3/starbucks/order/694e50b2-2c9d-4db2-8a2a-fde9ff0cdd9a'
+          url: 'http://34.209.93.162:9090/v3/starbucks/order/694e50b2-2c9d-4db2-8a2a-fde9ff0cdd9a'
       }).then(function successCallback(response) {
           alert(response.data.location);
       }, function errorCallback(response) {
@@ -44,7 +44,7 @@ angular.module('myApp.store1', ['ngRoute'])
 
     $scope.createOrder =  function () {
 
-        var res = $http.post('http://localhost:9090/v3/starbucks/order', dataObj);
+        var res = $http.post('http://34.209.93.162:9090/v3/starbucks/order', dataObj);
         res.success(function(data, status, headers, config) {
             alert( "Success message: " +status + JSON.stringify({data: data}));
         });

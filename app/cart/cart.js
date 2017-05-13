@@ -29,7 +29,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
             $http({
                 method: 'GET',
-                url: 'http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart'
+                url: 'http://34.209.93.162:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart'
             }).then(function successCallback(response) {
    //             alert("cart received");
 
@@ -52,7 +52,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
         $scope.removeItem = function(index)
         {
             $scope.order.items.splice(index,1);
-            var res = $http.post('http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
+            var res = $http.post('http://34.209.93.162:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
             res.success(function(data, status, headers, config) {
      //           alert( "Success message: " +status + JSON.stringify({data: data}));
             });
@@ -68,7 +68,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
             $scope.order.items.push($scope.dataObj);
 
-            var res = $http.post('http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
+            var res = $http.post('http://34.209.93.162:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
             res.success(function(data, status, headers, config) {
      //           alert( "Success message: " +status + JSON.stringify({data: data}));
                 //$scope.order.items.splice(0,0,$scope.dataObj);
@@ -85,7 +85,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
         $scope.updateCart = function()
         {
-            var res = $http.put('http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
+            var res = $http.put('http://34.209.93.162:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
             res.success(function(data, status, headers, config) {
                 $scope.showAllItems();
 
@@ -112,7 +112,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
 
 
-            var res = $http.put('http://localhost:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
+            var res = $http.put('http://34.209.93.162:9090/v3/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
             res.success(function(data, status, headers, config) {
                 $window.location.href = '';
 
