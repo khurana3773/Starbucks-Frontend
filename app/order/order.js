@@ -27,7 +27,7 @@ order.controller('orderCtrl', ['$scope','$http','$window','sharedProperties','sh
 
         $http({
             method: 'GET',
-            url: 'http://34.209.93.162:9090/v3/'+sharedProperties.getProperty()+'/starbucks/order/'+sharedProperties.getOrderProperty()
+            url: sharedProperties.getURL()+'/'+sharedProperties.getProperty()+'/starbucks/order/'+sharedProperties.getOrderProperty()
         }).then(function successCallback(response) {
             alert("cart received");
 

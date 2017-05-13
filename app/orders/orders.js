@@ -40,7 +40,7 @@ orders.config(['$routeProvider', function($routeProvider) {
 
         $http({
             method: 'GET',
-            url: 'http://34.209.93.162:9090/v3/'+sharedProperties.getProperty()+'/starbucks/orders'
+            url: sharedProperties.getURL()+'/'+sharedProperties.getProperty()+'/starbucks/orders'
         }).then(function successCallback(response) {
                         alert("cart received");
 

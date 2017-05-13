@@ -13,6 +13,8 @@ angular.module('myApp.home', ['ngRoute'])
 .service('sharedProperties', function () {
     var store = '';
     var order = '';
+    //var url = ""
+    var url = "http://ec2-52-53-182-241.us-west-1.compute.amazonaws.com:8000"
     return {
         getProperty: function () {
             return store;
@@ -25,6 +27,9 @@ angular.module('myApp.home', ['ngRoute'])
         },
         setOrderProperty: function(orderIn) {
             order = orderIn;
+        },
+        getURL: function() {
+            return url;
         }
     };
 })
