@@ -42,7 +42,7 @@ orders.config(['$routeProvider', function($routeProvider) {
             method: 'GET',
             url: sharedProperties.getURL()+'/'+sharedProperties.getProperty()+'/starbucks/orders'
         }).then(function successCallback(response) {
-                        alert("cart received");
+                 //       alert("cart received");
 
 
             $scope.order = response.data;

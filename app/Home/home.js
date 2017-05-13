@@ -14,7 +14,7 @@ angular.module('myApp.home', ['ngRoute'])
     var store = '';
     var order = '';
     //var url = ""
-    var url = "http://ec2-52-53-182-241.us-west-1.compute.amazonaws.com:8000"
+    var url = "https://ec2-52-53-182-241.us-west-1.compute.amazonaws.com:8000"
     return {
         getProperty: function () {
             return store;

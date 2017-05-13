@@ -13,7 +13,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
         });
     }])
 
-    cart.controller('cartCtrl', ['$scope','$http','$window','sharedProperties',function($scope,$http,$window,sharedProperties) {
+    cart.controller('cartCtrl', ['$scope','$http','$window','sharedProperties','$location',function($scope,$http,$window,sharedProperties,$location) {
         $scope.products = ["Latte","Chai","Boba","Coffee","Hot Chocolate"];
         $scope.milkType = ["Whole","Half n Half","Skim","None"];
         $scope.size = ["Small","Regular","Large","Extra Large"];
@@ -114,7 +114,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
             var res = $http.put(sharedProperties.getURL()+'/'+sharedProperties.getProperty()+'/starbucks/cart', $scope.order);
             res.success(function(data, status, headers, config) {
-                $window.location.href = '';
+                $location.path("/confirm");
 
             });
             res.error(function(data, status, headers, config) {

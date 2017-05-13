@@ -3,7 +3,8 @@
 // Declare app level module which depends on views, and components
 var starbucksApp = angular.module('myApp', [
   'ngRoute',
-  'myApp.store1',
+  'myApp.confirm',
+  'myApp.store',
   'myApp.home',
   'myApp.orders',
   'myApp.order',
