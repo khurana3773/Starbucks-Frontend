@@ -36,7 +36,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
                 $scope.order = response.data;
             }, function errorCallback(response) {
-                alert("Fail"+sharedProperties.getProperty());
+             //   alert("Fail"+sharedProperties.getProperty());
             });
         }
 
@@ -57,7 +57,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
      //           alert( "Success message: " +status + JSON.stringify({data: data}));
             });
             res.error(function(data, status, headers, config) {
-                alert( "failure message: " + JSON.stringify({data: data}));
+     //           alert( "failure message: " + JSON.stringify({data: data}));
             });
         }
 
@@ -76,7 +76,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
             });
             res.error(function(data, status, headers, config) {
-                alert( "failed to add: " + JSON.stringify({data: data}));
+       //         alert( "failed to add: " + JSON.stringify({data: data}));
             });
 
         }
@@ -91,7 +91,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
             });
             res.error(function(data, status, headers, config) {
-                alert( "failed to add: " + JSON.stringify({data: data}));
+         //       alert( "failed to add: " + JSON.stringify({data: data}));
             });
         }
 
@@ -118,7 +118,7 @@ var cart = angular.module('myApp.cart', ['ngRoute']);
 
             });
             res.error(function(data, status, headers, config) {
-                alert( "failed to add: " + JSON.stringify({data: data}));
+           //     alert( "failed to add: " + JSON.stringify({data: data}));
             });
 
 

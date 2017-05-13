@@ -37,7 +37,7 @@ angular.module('myApp.home', ['ngRoute'])
 
         $scope.setStore = function (value) {
             sharedProperties.setProperty(value);
-            alert(value);
+        //    alert(value);
         };
 
     }]);

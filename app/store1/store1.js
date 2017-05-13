@@ -22,9 +22,9 @@ angular.module('myApp.store1', ['ngRoute'])
           method: 'GET',
           url: 'http://34.209.93.162:9090/v3/starbucks/order/694e50b2-2c9d-4db2-8a2a-fde9ff0cdd9a'
       }).then(function successCallback(response) {
-          alert(response.data.location);
+//          alert(response.data.location);
       }, function errorCallback(response) {
-          alert("Fail");
+  //        alert("Fail");
       });
   }
 
@@ -46,10 +46,10 @@ angular.module('myApp.store1', ['ngRoute'])
 
         var res = $http.post('http://34.209.93.162:9090/v3/starbucks/order', dataObj);
         res.success(function(data, status, headers, config) {
-            alert( "Success message: " +status + JSON.stringify({data: data}));
+    //        alert( "Success message: " +status + JSON.stringify({data: data}));
         });
         res.error(function(data, status, headers, config) {
-            alert( "failure message: " + JSON.stringify({data: data}));
+      //      alert( "failure message: " + JSON.stringify({data: data}));
         });
     }
 

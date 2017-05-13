@@ -33,7 +33,7 @@ orders.config(['$routeProvider', function($routeProvider) {
 
     $scope.setOrder = function (value) {
         sharedProperties.setOrderProperty(value);
-        alert(value);
+//        alert(value);
     };
 
     $scope.showAllItems =  function () {
@@ -47,7 +47,7 @@ orders.config(['$routeProvider', function($routeProvider) {
 
             $scope.order = response.data;
         }, function errorCallback(response) {
-            alert("Fail"+sharedProperties.getProperty());
+//            alert("Fail"+sharedProperties.getProperty());
         });
     };
 
