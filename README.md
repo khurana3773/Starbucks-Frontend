@@ -1,6 +1,8 @@
 ### CMPE281-Hackathon
 Starbucks drink ordering portal based on Restbucks CRUD REST API design.
 
+![Alt text](https://github.com/khurana3773/FrontendStarbucks/starbucks_stores.png?raw=true "Optional Title")
+
 ### Overview 
 
 - The Frontend of Starbucks sends REST calls to middleware KONG Gateway which is backed by 3-Node Cassandra cluster. The KONG routes the REST calls to respective tenant backends which are independent Starbucks store.
