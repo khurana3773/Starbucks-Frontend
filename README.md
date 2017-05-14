@@ -1,7 +1,6 @@
 ### CMPE281-Hackathon
 Starbucks drink ordering portal based on Restbucks CRUD REST API design.
 
-![Alt text](https://github.com/khurana3773/FrontendStarbucks/master/starbucks_stores.png?raw=true "Optional Title")
 ![ScreenShot](https://raw.github.com/khurana3773/FrontendStarbucks/master/starbucks_stores.png)
 
 ### Overview 
