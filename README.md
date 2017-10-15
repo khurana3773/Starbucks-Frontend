@@ -7,7 +7,7 @@
 <table>
 <tr>
 <td>
-<p align="justify"> Starbucks is a famous American Coffee company with online ordering system. Our project is based on the Offical Starbucks website. It has 3 components <br>
+<p align="justify"> Starbucks is a famous American Coffee company with online ordering system. Our project is to replicate the Offical Starbucks website, providing scalability and fault tolerance. The project has 3 components <br>
  
 <ul>
  <li><a href = "https://github.com/khurana3773/Starbucks-Frontend">Frontend</a></li>
