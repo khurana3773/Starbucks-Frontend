@@ -68,7 +68,7 @@ npm install
 npm start
 ```
 
-<p>Now open the application using the URL [localhost:8000/index.html][local-app-url]</p>
+<p>Now open the application using the URL [localhost:8000/index.html]</p>
 
 <p><i>Note: These steps are only for Front-end. For Back-end, see the <a href="https://github.com/rsk5492/Starbucks-Portal">backend repository</a>. To configure the gateway, check this <a href= "https://github.com/shiva322/KongAPIGateway-Starbucks">respository</a></i>.</p>
 
