@@ -1,7 +1,9 @@
 <p align="center">
 <a href="https://github.com/khurana3773/Starbucks-Frontend/LICENSE.md" rel="Licence"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" /></a>
 </p>
-<img src ="https://github.com/khurana3773/Starbucks-Frontend/starbucks_stores.png"></img>
+
+![Welcome](/screenshots/starbucks_stores.png?raw=true "Welcome Screen")
+
 <table>
 <tr>
 <td>
@@ -44,6 +46,9 @@ The online ordering has a 3-step process <br><ol>
 
 ## Architecture
 
+![Architecture](/screenshots/Architecture.png?raw=true "Architecture")
+
+
 
 ## Project Demo
 
@@ -68,10 +73,22 @@ npm start
 <p><i>Note: These steps are only for Front-end. For Back-end, see the <a href="https://github.com/rsk5492/Starbucks-Portal">backend repository</a>. To configure the gateway, check this <a href= "https://github.com/shiva322/KongAPIGateway-Starbucks">respository</a></i>.</p>
 
 ## Screenshots 
-[More Screenshots] (Project Deliverables/Screenshots/README.md)
-<p align="center"><img src="http://nrupeshpatel.com/Files/CMPE272/GitHub/Images/ss2.png" width="28%" />
-<img src="http://nrupeshpatel.com/Files/CMPE272/GitHub/Images/ss3.png" width="28%" />
-<img src="http://nrupeshpatel.com/Files/CMPE272/GitHub/Images/ss4.png" width="28%" /></p>
+
+![Screen1](/screenshots/Screen1.PNG?raw=true "Welcome Screen")
+
+<p align="center">The Welcome Screen</p>
+
+![Screen2](/screenshots/screen2.PNG?raw=true "Screen2")
+
+<p align="center">Placing Order</p>
+
+![Screen3](/screenshots/screen3.PNG?raw=true "Screen3")
+
+<p align="center">List of all Orders</p>
+
+![Screen4](/screenshots/Screen4.PNG?raw=true "Detailed View of an Order")
+
+<p align="center">A detailed view of all orders</p>
 
 ## Features
 
