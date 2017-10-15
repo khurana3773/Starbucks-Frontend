@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://github.com/khurana3773/Starbucks-Frontend/LICENSE.md" rel="Licence"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" /></a>
+<a href="https://github.com/khurana3773/Starbucks-Frontend/blob/master/LICENSE" rel="Licence"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" /></a>
 </p>
 
 ![Welcome](/screenshots/starbucks_stores.png?raw=true "Welcome Screen")
@@ -103,7 +103,7 @@ Dynamic Lists and Login per user/session management are a few future enhancement
 
 ## License
 
-Starbucks(Frontend) is released under the [MIT License](https://github.com/SJSU272Lab/Fall16-Team11/blob/master/LICENSE.md).
+Starbucks(Frontend) is released under the [MIT License](https://github.com/khurana3773/Starbucks-Frontend/blob/master/LICENSE).
 
 ## Team Members
 
